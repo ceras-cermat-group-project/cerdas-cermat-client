@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import axios from '../api/axios'
 
 Vue.use(Vuex)
 
@@ -16,7 +16,7 @@ export default new Vuex.Store({
   actions: {
     fetchQuiz (context) {
       axios({
-        url: 'http://localhost:3000/quiz',
+        url: '/quiz',
         method: 'GET'
       })
         .then(({ data }) => {
