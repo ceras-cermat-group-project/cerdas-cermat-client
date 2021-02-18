@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>{{quizzes}}</p>
   </div>
 </template>
 
@@ -13,6 +14,14 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  created () {
+    this.$store.dispatch('fetchQuiz')
+  },
+  computed: {
+    quizzes () {
+      return this.$store.state.quizzes
+    }
   }
 }
 </script>
