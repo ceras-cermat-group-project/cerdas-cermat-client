@@ -97,7 +97,7 @@ body, html {
 }
 
 .quotesdibawah{
-font-family: 'DM Serif Display', serif;
+  font-family: 'Anton', sans-serif;
    color: rgb(255, 251, 0);
 }
 .api{
