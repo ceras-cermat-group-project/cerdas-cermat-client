@@ -1,31 +1,28 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from '../api/axios'
+// import axios from '../api/axios'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    quizzes: []
+    quiz: [],
+    score: 0
   },
   mutations: {
     fetchQuiz (state, payload) {
-      state.quizzes = payload
+      state.quiz = payload
+    },
+    scoring (state, score) {
+      state.score += score
     }
   },
   actions: {
-    fetchQuiz (context) {
-      axios({
-        url: '/quiz',
-        method: 'GET'
-      })
-        .then(({ data }) => {
-          context.commit('fetchQuiz', data)
-        })
-        .catch((error) => {
-          console.log('salah disini')
-          console.log(error)
-        })
+    fetchQuiz (context, payload) {
+      context.commit('fetchQuiz', payload)
+    },
+    scoring(context, score) {
+      context.commit('scoring', score)
     }
   }
 })

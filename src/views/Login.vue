@@ -45,6 +45,12 @@ export default {
   methods: {
     login () {
       localStorage.setItem('Username', this.Username)
+      const newData = {
+        UserId: this.$socket.id,
+        Username: localStorage.getItem('Username'),
+        answerQuiz: false
+      }
+      this.$socket.emit('login', newData)
       this.$router.push('/')
     }
   }
