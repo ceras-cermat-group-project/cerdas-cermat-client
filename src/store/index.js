@@ -21,7 +21,7 @@ export default new Vuex.Store({
     fetchQuiz (context, payload) {
       context.commit('fetchQuiz', payload)
     },
-    scoring(context, score) {
+    scoring (context, score) {
       context.commit('scoring', score)
     }
   }

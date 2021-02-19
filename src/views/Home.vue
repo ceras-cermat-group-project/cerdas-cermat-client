@@ -1,7 +1,7 @@
 <template>
 <div class="bg">
   <button type="button" class="btn btn-danger" @click="fetchQuiz">Start</button>
-<div class="container">
+<div class="d-flex justify-content-center container">
   <h1 style="color: green">{{score}}</h1>
 
 <form @submit.prevent="UserAnswer">
@@ -15,11 +15,12 @@
   <button type="submit">submit</button>
 </form>
 <div class="col-md-4">
+
          <div class="card mb-4 text-white bg-dark">
-            <img class="card-img-top" :src="getImage" alt="Card image cap">
-            <div class="card-body">
+           <div class="head card-header">
                <h5 class="card-title">pertanyaan {{quiz.id}}</h5>
             </div>
+            <img class="hai card-img-top" :src="getImage" alt="Card image cap">
          </div>
       </div>
 </div>
@@ -96,6 +97,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.hai{
+  width: 45vw;
+}
+.head{
+  width: 100vw;
+}
 
 </style>
